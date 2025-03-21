@@ -6,7 +6,7 @@ interface IconWrapperProps {
 
 const IconWrapper: React.FC<IconWrapperProps> = ({
   color = "currentColor",
-  className = "size-6",
+  className,
   children,
 }) => {
   return (

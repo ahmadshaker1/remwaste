@@ -7,9 +7,9 @@ interface StepProps {
 
 const Step: React.FC<StepProps> = ({ title, icon }) => {
   return (
-    <div className="flex flex-row items-center justify-between">
+    <div className="flex flex-row items-center justify-between space-x-2">
       {icon}
-      <h1>{title}</h1>
+      <h1 className="text-sm font-medium">{title}</h1>
     </div>
   );
 };
