@@ -38,7 +38,7 @@ const SkipCard: React.FC<SkipCardProps> = ({
           className="rounded-xl"
           alt="Dummy Skip Dumpster Image"
         />
-        <h2 className="bg-white rounded-full absolute top-2 left-2 px-2 text-sm font-semibold shadow">
+        <h2 className="bg-white rounded-full absolute bottom-2 right-2 px-2 text-sm font-semibold shadow">
           {size} yards
         </h2>
       </div>
@@ -50,16 +50,15 @@ const SkipCard: React.FC<SkipCardProps> = ({
         {allowed_on_road ? (
           <div className="flex flex-row items-center justify-start space-x-1">
             <svg
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
               xmlns="http://www.w3.org/2000/svg"
-              className="size-4 bg-[#22c55e] rounded-full flex items-center justify-center"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              className="size-5 fill-[#22c55e]"
             >
               <path
-                d="M18.71 7.21a1 1 0 0 0-1.42 0l-7.45 7.46-3.13-3.14a1 1 0 1 0-1.42 1.42l3.84 3.84a1 1 0 0 0 1.42 0l8.16-8.16a1 1 0 0 0 0-1.42Z"
-                fill="#fff"
+                fillRule="evenodd"
+                d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm13.36-1.814a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z"
+                clipRule="evenodd"
               />
             </svg>
 
@@ -69,16 +68,14 @@ const SkipCard: React.FC<SkipCardProps> = ({
           <div className="flex flex-row items-center justify-start space-x-1">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              fill="none"
               viewBox="0 0 24 24"
-              strokeWidth={1.5}
-              stroke="currentColor"
-              className="size-6 stroke-white fill-[#ff0000] mx-0"
+              fill="currentColor"
+              className="size-5 fill-[#ff0000] "
             >
               <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="m9.75 9.75 4.5 4.5m0-4.5-4.5 4.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+                fillRule="evenodd"
+                d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25Zm-1.72 6.97a.75.75 0 1 0-1.06 1.06L10.94 12l-1.72 1.72a.75.75 0 1 0 1.06 1.06L12 13.06l1.72 1.72a.75.75 0 1 0 1.06-1.06L13.06 12l1.72-1.72a.75.75 0 1 0-1.06-1.06L12 10.94l-1.72-1.72Z"
+                clipRule="evenodd"
               />
             </svg>
 
@@ -89,43 +86,58 @@ const SkipCard: React.FC<SkipCardProps> = ({
         {allows_heavy_waste ? (
           <div className="flex flex-row items-center justify-start space-x-1">
             <svg
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
               xmlns="http://www.w3.org/2000/svg"
-              className="size-4 bg-[#22c55e] rounded-full flex items-center justify-center"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              className="size-5 fill-[#22c55e]"
             >
               <path
-                d="M18.71 7.21a1 1 0 0 0-1.42 0l-7.45 7.46-3.13-3.14a1 1 0 1 0-1.42 1.42l3.84 3.84a1 1 0 0 0 1.42 0l8.16-8.16a1 1 0 0 0 0-1.42Z"
-                fill="#fff"
+                fillRule="evenodd"
+                d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm13.36-1.814a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z"
+                clipRule="evenodd"
               />
             </svg>
+
             <p className="text-sm">Allows heavy waste</p>
           </div>
         ) : (
           <div className="flex flex-row items-center justify-start space-x-1">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              fill="none"
               viewBox="0 0 24 24"
-              strokeWidth={1.5}
-              stroke="currentColor"
-              className="size-6 stroke-white fill-[#ff0000] mx-0"
+              fill="currentColor"
+              className="size-5 fill-[#ff0000] "
             >
               <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="m9.75 9.75 4.5 4.5m0-4.5-4.5 4.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+                fillRule="evenodd"
+                d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25Zm-1.72 6.97a.75.75 0 1 0-1.06 1.06L10.94 12l-1.72 1.72a.75.75 0 1 0 1.06 1.06L12 13.06l1.72 1.72a.75.75 0 1 0 1.06-1.06L13.06 12l1.72-1.72a.75.75 0 1 0-1.06-1.06L12 10.94l-1.72-1.72Z"
+                clipRule="evenodd"
               />
             </svg>
+
             <p className="text-sm">Does not allow heavy waste</p>
           </div>
         )}
       </div>
       <div className="flex flex-row items-center justify-between w-full mt-4">
         <p className="text-xl font-semibold">£{totalPrice.toFixed(2)}</p>
-        <p className="text-sm font-semibold">Select</p>
+        <button className="cursor-pointer duration-300 hover:brightness-90 group w-20 text-xs font-semibold bg-[#22c55e] text-white pl-3 py-1 rounded-full flex flex-row items-center justify-start">
+          Select
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={3}
+            stroke="currentColor"
+            className="size-3 ml-2 group-hover:ml-3 duration-300"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="m8.25 4.5 7.5 7.5-7.5 7.5"
+            />
+          </svg>
+        </button>
       </div>
     </div>
   );
