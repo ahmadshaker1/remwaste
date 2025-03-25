@@ -1,36 +1,42 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Skip Selection Page
 
-## Getting Started
+This project renders a skip selection interface with skip size options, prices, and conditions. The page is built using **Next.js (App Router)** and styled with **Tailwind CSS**.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Approach
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 1. Data Fetching
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+I used a server-side async function (`fetchSkips`) to fetch skip data from a backend API via `process.env.NEXT_PUBLIC_BACKEND_URL`. The data is fetched at build time (for static optimization), with runtime validation to handle missing or invalid values.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- If the fetch fails or returns invalid data, a fallback is triggered (`notFound()`), leading to a 404 page.
+- To ensure Vercel builds correctly, I included checks for missing environment variables and non-OK HTTP responses.
 
-## Learn More
+### 2. Component Structure
 
-To learn more about Next.js, take a look at the following resources:
+The interface is broken into modular components:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- `Stepper`: Displays current progress in a multi-step process.
+- `SkipsGrid`: Renders a responsive grid of `SkipCard` components.
+- `SkipCard`: Displays individual skip info (size, hire period, availability, and total price).
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### 3. Error Handling
 
-## Deploy on Vercel
+To prevent runtime build errors (like calling `.toFixed()` or `.toString()` on `undefined`), I added:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Type and null checks before calculation
+- Safe fallback rendering (e.g., showing `N/A` instead of crashing)
+- Filtering of fetched data to ensure required fields are valid
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### 4. Deployment
+
+The project is deployed on **Vercel** as a sandbox. It serves as a self-contained, testable environment that doesn't rely on any local setup.
+
+### 5.Tech Stack
+
+Next.js 15 (App Router)
+
+Tailwind CSS
+
+TypeScript
