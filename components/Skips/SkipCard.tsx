@@ -124,7 +124,7 @@ const SkipCard: React.FC<SkipCardProps> = ({
       </div>
       <div className="flex flex-row items-center justify-between w-full mt-4">
         <p className="text-xl font-semibold">
-          £{totalPrice?.toFixed?.(2) ?? "0.00"}
+          £{totalPrice?.toFixed?.(2) ?? "0.0"}
         </p>
 
         <button className="cursor-pointer duration-300 hover:brightness-90 group w-18 text-xs font-semibold bg-[#22c55e] text-white pl-3 py-1 rounded-full flex flex-row items-center justify-start">
