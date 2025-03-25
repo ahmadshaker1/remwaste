@@ -26,7 +26,10 @@ const SkipCard: React.FC<SkipCardProps> = ({
   allowed_on_road,
   allows_heavy_waste,
 }) => {
-  const totalPrice = price_before_vat + (price_before_vat * vat) / 100;
+  const totalPrice =
+    typeof price_before_vat === "number" && typeof vat === "number"
+      ? price_before_vat + (price_before_vat * vat) / 100
+      : 0;
 
   return (
     <div className="rounded-lg p-4">
@@ -120,7 +123,10 @@ const SkipCard: React.FC<SkipCardProps> = ({
         )}
       </div>
       <div className="flex flex-row items-center justify-between w-full mt-4">
-        <p className="text-xl font-semibold">£{totalPrice.toFixed(2)}</p>
+        <p className="text-xl font-semibold">
+          £{totalPrice?.toFixed?.(2) ?? "0.00"}
+        </p>
+
         <button className="cursor-pointer duration-300 hover:brightness-90 group w-18 text-xs font-semibold bg-[#22c55e] text-white pl-3 py-1 rounded-full flex flex-row items-center justify-start">
           Select
           <svg
