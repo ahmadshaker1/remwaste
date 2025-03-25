@@ -38,7 +38,7 @@ const SkipCard: React.FC<SkipCardProps> = ({
           className="rounded-xl"
           alt="Dummy Skip Dumpster Image"
         />
-        <h2 className="bg-white rounded-full absolute bottom-2 right-2 px-2 text-sm font-semibold shadow">
+        <h2 className="bg-white rounded-full absolute bottom-2 left-2 px-2 text-sm font-semibold shadow">
           {size} yards
         </h2>
       </div>
