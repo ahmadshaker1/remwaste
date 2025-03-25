@@ -1,9 +1,14 @@
 import Stepper from "@/components/Stepper/Index";
 import fetchSkips from "@/lib/fetchSkips";
 import SkipsGrid from "@/components/Skips/Index";
+import { notFound } from "next/navigation";
 
 export default async function Home() {
   const skips = await fetchSkips();
+
+  if (!skips || skips.length === 0) {
+    notFound(); // This will show your custom 404 page if available
+  }
 
   return (
     <main className="min-h-screen flex flex-col items-center justify-start py-24">
