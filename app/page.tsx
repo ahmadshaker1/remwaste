@@ -5,8 +5,6 @@ import SkipsGrid from "@/components/Skips/Index";
 export default async function Home() {
   const skips = await fetchSkips();
 
-  console.log(skips);
-
   return (
     <main className="min-h-screen flex flex-col items-center justify-start py-24">
       <div className="w-full max-w-screen-lg">
